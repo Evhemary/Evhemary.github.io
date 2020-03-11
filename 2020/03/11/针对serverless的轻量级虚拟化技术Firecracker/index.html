@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Evemary&#39;s Blog</title>
+  <title>针对serverless的轻量级虚拟化技术Firecracker | Evemary&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Evemary&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="Firecracker简介 Firecracker是一种利用基于Linux内核虚拟机（KVM）打造而成的开源虚拟机监控器（VMM），它允许用户创建出微虚拟机（microVM）。Firecrakcer在设计当中奉行极简主义思维——即其中仅包含运行安全轻量级虚拟机所必需的内容，以提高安全性，减少启动时间并提高硬件利用率。 Firecracker特性 Firecracker是专为无服务器计算和容器应用程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="针对serverless的轻量级虚拟化技术Firecracker">
+<meta property="og:url" content="http://yoursite.com/2020/03/11/%E9%92%88%E5%AF%B9serverless%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AFFirecracker/index.html">
 <meta property="og:site_name" content="Evemary&#39;s Blog">
+<meta property="og:description" content="Firecracker简介 Firecracker是一种利用基于Linux内核虚拟机（KVM）打造而成的开源虚拟机监控器（VMM），它允许用户创建出微虚拟机（microVM）。Firecrakcer在设计当中奉行极简主义思维——即其中仅包含运行安全轻量级虚拟机所必需的内容，以提高安全性，减少启动时间并提高硬件利用率。 Firecracker特性 Firecracker是专为无服务器计算和容器应用程">
+<meta property="og:image" content="http://yoursite.com/.com//1.jpg">
+<meta property="og:image" content="http://yoursite.com/.com//2.jpg">
+<meta property="og:image" content="http://yoursite.com/.com//3.jpg">
+<meta property="article:published_time" content="2020-03-11T06:10:20.000Z">
+<meta property="article:modified_time" content="2020-03-11T06:38:18.186Z">
 <meta property="article:author" content="Evhemary">
+<meta property="article:tag" content="Serverless;虚拟化;容器;轻量级虚拟机">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Evemary&#39;s Blog" type="application/atom+xml">
   
@@ -149,36 +158,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-针对serverless的轻量级虚拟化技术Firecracker" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/11/%E9%92%88%E5%AF%B9serverless%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AFFirecracker/" class="archive-article-date">
-  	<time datetime="2020-03-11T06:10:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/11/%E9%92%88%E5%AF%B9serverless%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AFFirecracker/">针对serverless的轻量级虚拟化技术Firecracker</a>
+    <h1 class="article-title" itemprop="name">
+      针对serverless的轻量级虚拟化技术Firecracker
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/11/%E9%92%88%E5%AF%B9serverless%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AFFirecracker/" class="archive-article-date">
+  	<time datetime="2020-03-11T06:10:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Firecracker简介</strong></p>
+<p>Firecracker是一种利用基于Linux内核虚拟机（KVM）打造而成的开源虚拟机监控器（VMM），它允许用户创建出微虚拟机（microVM）。Firecrakcer在设计当中奉行极简主义思维——即其中仅包含运行安全轻量级虚拟机所必需的内容，以提高安全性，减少启动时间并提高硬件利用率。</p>
+<p><strong>Firecracker特性</strong></p>
+<p>Firecracker是专为无服务器计算和容器应用程序而构建的。与其他的虚拟机监视器（VMM），如QEMU相比，它不提供BIOS，无法引导任意内核，不模拟遗留设备或PCI，也不支持VM迁移，在典型的无服务器容器和功能工作负载下，这些相对低层次的功能是不必要的。Firecracker采用每虚拟机单的进程模型，它不提供VM的编排、打包、管理等功能，这些功能需要借由更上层的实现，如（Kubernetes、Do-cker等）。这些针对无服务器计算的优化，减少了MicroVM的攻击面，同时保障对于不同功能的隔离能力，使其更切合于无服务器平台。</p>
+<p>通过这些针对Serverless的优化，Firecracker每启动一个MicroVM仅产生5MB的内存开销，仅需要125ms的启动时间，同时，每主机每秒最多可以创建150个MicroVM。。在保障了这些相较于QEMU极高的性能情况下，同时提供满足无服务器计算平台的高隔离性以及更低的开销。</p>
+<p><strong>设计原则</strong></p>
+<p>实际的生产中（如AWS Lambda、Fargate），现有的虚拟化技术难以同时满足工作负载对隔离以及成本的要求。设计中，Firecracker需要满足如下要求：</p>
+<p><strong>隔离性：</strong>必须保证多个功能可以在同一硬件上运行，并且必须防止特权升级，信息泄露，秘密通道和其他风险。</p>
+<p><strong>开销与密度：</strong>必须有可能在一台机器上运行数千个功能，而浪费最少。</p>
+<p><strong>性能：</strong>功能必须与本地运行相同，性能接近，同时保障与同一硬件上邻居的行为隔离。</p>
+<p><strong>兼容性：</strong>无需更改代码或重新编译。</p>
+<p><strong>快速切换：</strong>必须尽可能快速启动新功能并清理旧功能。</p>
+<p><strong>软分配：</strong>必须有能力过度使用系统资源，每个功能仅消耗其所需的资源，而不消耗其有权使用的资源。</p>
+<p><strong>Firecracker架构</strong></p>
+<p><img src="/.com//1.jpg" alt></p>
+<p>​                                                        图1 AWS Lambda事件路径高级架构</p>
+<p>调用流通过调用 REST API到达前端，在此对请求进行身份验证并检查授权，然后加载功能元数据。Worker Manager在不同物理基础结构中的少量主机之间复制单个功能（或一小组功能）的粘性路由信息，以确保高可用性。每个Lambda worker都提供了许多槽，每个槽都提供了用于功能的预加载执行环境。如果有功能可用的插槽，Worker Manager可以并告诉前端该槽可使用；没有可用插槽时，worker manager将调用放置服务以请求为该功能创建一个新槽。放置服务优化整个工人队伍中单个功能的槽布置，从而确保包括CPU，内存，网络和存储在内的资源利用率均匀，并确保每个woker上相关资源的分配潜力被最小化。</p>
+<p><img src="/.com//2.jpg" alt></p>
+<p>​                                                                图2 Lambda worker架构</p>
+<p>图2中，Firecracker提供了在单个服务器上运行大量不同工作负载所需的关键安全边界。为每个MicroVM启动一个Firecracker进程，该进程负责创建和管理MicroVM，提供设备仿真来自同一应用程序的多个工作负载，以及在一定程度上来自同一客户或行业的多个工作负载，都充当单个工作负载并处理VM退出。</p>
+<p>具有Lambda shim的MicroMana-ger协议对于安全性至关重要，因为它是多租户Lambda控制平面和单租户的MicroVM之间的边界。MicroManager还会保留一小部分预引导的MicroVM，以便在Placement请求新插槽时可以使用以保障MicroVM的快速启动需求。快速启动是Firecracker的首要设计要求，这既是因为启动时间是启动期间消耗的资源的代理，又因为快速启动使Lambda可以使这些备用池保持较小（Little’s law）。</p>
+<p><img src="/.com//3.jpg" alt></p>
+<p>​                                                                图3 单个槽的状态转换</p>
+<p>每个插槽可以以以下三种状态之一存在：初始化，繁忙和空闲，并且在其生命周期中，插槽从初始化变为空闲，然后在空闲和繁忙之间移动，以调用流到插槽（参见图3）。槽在空闲时会消耗内存，从而使功能状态保持可用。在初始化和繁忙时，槽会使用系统中的任何其他资源。为了实现资源的软分配和超额使用，处于空闲状态的槽可以被其他功能的槽使用。</p>
+<p>从根本上说，超额使用是一种统计上的赌注：整个平台必须确保资源尽可能保持忙碌，但是某些资源可用于任何已经接收工作的槽，这样可能会资源争用的情况。为了减少在超额使用中资源的征用情况，就需要是的工作负载尽可能的不相关，即来自同一应用程序的多个工作负载，以及在一定程度上来自同一客户或行业的多个工作负载，都可以被视作单个工作负载，以减少资源争用。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,46 +222,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/11/%E9%92%88%E5%AF%B9serverless%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AFFirecracker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/10/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-10T15:35:57.616Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/10/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -252,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
